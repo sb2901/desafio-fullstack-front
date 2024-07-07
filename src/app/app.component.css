@@ -1,0 +1,18 @@
+
+
+.super-bar {
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.top-left {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}

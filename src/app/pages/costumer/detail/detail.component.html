@@ -1,0 +1,66 @@
+
+  <div class="card">
+
+    <div class="card-title">
+        <h1>Dados cliente</h1>
+    </div>
+
+    <form class="form-group" [formGroup]="costumerForm" (ngSubmit)="onSubmit()">
+      <div class="detail-action example-form-fields ">
+        <button mat-raised-button routerLink="/costumer">Voltar</button>
+        <button mat-raised-button type="submit">Salvar</button>
+        <button mat-raised-button type="button" (click)="onDelete()" *ngIf="!isNewRecord()">Excluir</button>
+      </div>
+
+
+      <mat-form-field hintLabel="Nome do cliente">
+        <mat-label>Nome do cliente</mat-label>
+        <input matInput  name="email" formControlName="name" placeholder="Nome do cliente" />
+      </mat-form-field>
+    
+      <div>
+        <span> Data de criação: {{costumer?.createdAt | date : 'dd/MM/yyyy HH:mm'}}  </span>
+      </div>
+  </form>
+
+  <div class="card-title">
+    <h1>Contatos</h1>
+</div>
+  <div>
+
+
+    <a mat-button (click)="addContact()">Adicionar novo contato</a>
+    <div *ngFor="let contact of costumer.contact; let i = index" >
+      <contact-detail [contact]="contact" [costumer]="costumer" [index] ="i" >
+      </contact-detail> 
+    </div>  
+  </div>
+  
+
+    
+
+  </div> 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    <br>
+ 
+
+
+
+
