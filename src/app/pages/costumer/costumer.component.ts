@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../../services/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { CostumerService } from '../../services/costumer/costumer-service.service';
-
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
@@ -13,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 
 import {MatTableModule} from '@angular/material/table';
+import { PdfcreatorService } from '../../services/pdf/pdfcreator.service';
 
 
 @Component({
@@ -27,6 +26,7 @@ export class CostumerComponent {
 
   authService = inject(CostumerService);
   router = inject(Router);
+  pdfCreator = inject(PdfcreatorService);
 
   costumerList:any =[];
   displayedColumns: string[] = [ 'name', 'createdAt'];
@@ -49,6 +49,9 @@ export class CostumerComponent {
     );
   }
 
+  generatePdf() {
+    this.pdfCreator.generateReport(this.costumerList);
+  }
   
 
 
