@@ -19,48 +19,19 @@
       </mat-form-field>
     
       <div>
-        <span> Data de criação: {{costumer?.createdAt | date : 'dd/MM/yyyy HH:mm'}}  </span>
+        <span> Data de criação: {{costumer.createdAt | date : 'dd/MM/yyyy HH:mm'}}  </span>
       </div>
   </form>
 
   <div class="card-title">
-    <h1>Contatos</h1>
-</div>
+  <h1>Contatos</h1>
+  </div>
+
   <div>
-
-
     <a mat-button (click)="addContact()">Adicionar novo contato</a>
     <div *ngFor="let contact of costumer.contact; let i = index" >
-      <contact-detail [contact]="contact" [costumer]="costumer" [index] ="i" >
-      </contact-detail> 
-    </div>  
+        <contact-detail [contact]="contact" [costumer]="costumer" [index] ="i" >
+        </contact-detail> 
+      </div>  
   </div>
-  
-
-    
-
-  </div> 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-    <br>
- 
-
-
-
-
+</div> 

@@ -10,6 +10,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { CostumerService } from '../../../services/costumer/costumer-service.service';
 
+import { Costumer } from '../../../interfaces/costumer';
+import { Contact } from '../../../interfaces/contact';
+
+
 @Component({
   selector: 'app-detail',
   standalone: true,
@@ -26,11 +30,13 @@ export class DetailComponent {
 
   costumerService = inject(CostumerService);
 
-  public costumer :any={};
-  
+
+  public costumer :Costumer= {id:0};
+
   public costumerForm: any; 
 
   private costumerId:number=0;
+  
 
   constructor(){ }
 
@@ -49,15 +55,29 @@ export class DetailComponent {
    * Salva o registro
    */
   onSubmit(){
-    if(this.costumerForm.valid){
+    if(this.costumerForm.valid && this.isValidateContacts()){
       console.log(this.costumerForm.value);
+      //validar os filhos
+
 
       if(this.isNewRecord()){
         this.saveAction();
       }else {
         this.updateAction();
       }
+    }else{
+      alert('Campos obrigatórios não preenchidos');
     }
+ }
+
+ isValidateContacts(){
+  let valid:Boolean = true;
+  this.costumer.contact?.forEach(
+    contact => {
+      valid = valid && contact?.type >0 && contact?.value.length >0;
+    }
+  );
+  return valid;
  }
 
  saveAction(){
@@ -115,7 +135,9 @@ updateAction(){
   */
   onDelete() {
     if(!this.isNewRecord()){
-      this.costumerService.delete({id:this.costumerId})
+
+      this.costumerService.delete({id:this.costumerId} as Costumer)
+
       .subscribe(
         {
             next: () => {
@@ -149,7 +171,7 @@ updateAction(){
   * Cria um novo contato
   */
   addContact() {
-    this.costumer.contact.push({}); 
+    this.costumer.contact?.push({}as Contact); 
   }
 
   /**

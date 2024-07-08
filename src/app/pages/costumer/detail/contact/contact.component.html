@@ -3,7 +3,7 @@
     
     <mat-form-field>
         <mat-label>Select</mat-label>
-        <mat-select  placeholder="Tipo"  [(value)]="contact.type">
+        <mat-select  placeholder="Tipo"  [(value)]="contact.type" formControlName="type">
           <mat-option [value]=1>Email</mat-option>
           <mat-option [value]=2>Telefone</mat-option>
         </mat-select>
