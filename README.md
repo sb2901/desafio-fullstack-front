@@ -31,5 +31,6 @@ O desafio não foi finalizado e ficaram pendentes as seguintes implementações:
 - Implementação de tratamentos de erros (imprimem em console mas não apresenta mensagem clara ao cliente)
 - Implementação de CSS corretamente. Realizada implementação básica para uso do sistema porém não está amigável.
 - Implementação de interfaces para falicitar leitura e qualidade do código (Hoje estão com `any`)
+- Cobertura de testes
 
 
