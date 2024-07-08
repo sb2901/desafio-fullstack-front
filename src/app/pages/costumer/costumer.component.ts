@@ -12,6 +12,7 @@ import {MatListModule} from '@angular/material/list';
 
 import {MatTableModule} from '@angular/material/table';
 import { PdfcreatorService } from '../../services/pdf/pdfcreator.service';
+import { Costumer } from '../../interfaces/costumer';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class CostumerComponent {
   router = inject(Router);
   pdfCreator = inject(PdfcreatorService);
 
-  costumerList:any =[];
+  costumerList:Costumer[] =[];
+  //table
   displayedColumns: string[] = [ 'name', 'createdAt'];
 
 
@@ -39,7 +41,7 @@ export class CostumerComponent {
     .subscribe(
       {
         next: (list) => {
-          this.costumerList = list;
+          this.costumerList = list as Costumer[];
         },
         error: (erro) => {
           alert("Erro ao obter a lista de clientes");
