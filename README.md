@@ -1,27 +1,36 @@
-# ProjetoFrontEnd
+# Desafio fullstack - Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+Este projeto faz parte do Desafio fullstack. Ele corresponde ao frontend do sistema.
 
-## Development server
+Confira a descrição completa do desafio  [aqui](https://github.com/SeniorSA/inovacao/blob/main/desafio-fullstack.md)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O backend deste projeto poder ser obtido  [aqui](https://github.com/sb2901/desafio-fullstack-back)
 
-## Code scaffolding
+## Tecnologias Utilizadas
+Este projeto foi desenvolvido utilizando Angular 18 com Material.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalação e execução
+Siga os passos abaixo para executar o projeto em sua máquina.
 
-## Build
+ ### 💻 Pré-requisitos
+ - [Node](https://nodejs.org/pt/blog/release/v20.11.1) 20.11.1
+ - [Angular CLI](https://github.com/angular/angular-cli) 18.0.7
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ ### 🚀 Instalação
+ - Realize o clone do projeto em sua máquina
+ - Abra o projeto na IDE Java de sua preferencia
+ - Abra o terminal de sua IDE
+ - Instale as dependencias através do comando `npm i`
+ 
+ ### ☕ Execução
+ - Execute o comanndo `ng serve`. O projeto estará disponível em  `http://localhost:4200/`. 
 
-## Running unit tests
+## Próximos passos
+O desafio não foi finalizado e ficaram pendentes as seguintes implementações:
+- Validação do campos (exemplo: campo de email, máscara para telefone, etc)
+- Implementação de tratamentos de erros (imprimem em console mas não apresenta mensagem clara ao cliente)
+- Implementação de CSS corretamente. Realizada implementação básica para uso do sistema porém não está amigável.
+- Implementação de interfaces para falicitar leitura e qualidade do código (Hoje estão com `any`)
+- Cobertura de testes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
