@@ -1,0 +1,29 @@
+
+<form class="form-group" [formGroup]="contactForm" (ngSubmit)="onDelete()">
+    
+    <mat-form-field>
+        <mat-label>Select</mat-label>
+        <mat-select  placeholder="Tipo"  [(value)]="contact.type">
+          <mat-option [value]=1>Email</mat-option>
+          <mat-option [value]=2>Telefone</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input matInput type="text" formControlName="value" placeholder="Valor" onchange="">
+    </mat-form-field>
+
+
+    <button mat-icon-button aria-label="Remover contato">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+
+    
+</form>
+
+
+
+
+ 

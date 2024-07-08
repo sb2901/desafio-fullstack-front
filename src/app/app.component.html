@@ -1,0 +1,16 @@
+
+
+<main class="main" *ngIf="authService.isLoggedIn()">
+  
+  <div class="super-bar" >
+      <div class="top-left" >
+        <button mat-button [routerLink]="['/costumer']" *ngIf="authService.isLoggedIn()" >Inicio</button>
+      </div>
+      <div class="top-right">
+          <button mat-button (click)="logout()" *ngIf="authService.isLoggedIn()" >Logout</button>
+      </div>
+  </div>
+      
+</main>
+
+<router-outlet />
