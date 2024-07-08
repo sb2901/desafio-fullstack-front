@@ -15,6 +15,7 @@ import { PdfcreatorService } from '../../services/pdf/pdfcreator.service';
 import { Costumer } from '../../interfaces/costumer';
 
 
+
 @Component({
   selector: 'app-costumer',
   standalone: true,
@@ -28,6 +29,7 @@ export class CostumerComponent {
   authService = inject(CostumerService);
   router = inject(Router);
   pdfCreator = inject(PdfcreatorService);
+
 
   costumerList:Costumer[] =[];
   //table

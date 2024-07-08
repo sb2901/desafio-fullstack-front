@@ -4,8 +4,10 @@ import {DatePipe} from '@angular/common';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+
 import { Costumer } from '../../interfaces/costumer';
 import { Contact } from '../../interfaces/contact';
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Injectable({
@@ -16,7 +18,9 @@ export class PdfcreatorService {
   datePipe = new DatePipe('en-US');
   constructor() {}
 
+
   generateReport(data: Costumer[]){
+
    
     let rows: any[][]=[];
 

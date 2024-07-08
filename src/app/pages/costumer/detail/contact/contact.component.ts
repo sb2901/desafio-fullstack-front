@@ -11,8 +11,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { Costumer } from '../../../../interfaces/costumer';
 import { Contact } from '../../../../interfaces/contact';
+
 
 
 @Component({
@@ -26,9 +28,11 @@ import { Contact } from '../../../../interfaces/contact';
 })
 export class ContactComponent {
 
+
   @Input() costumer!:Costumer;
   @Input() contact!: Contact;
   @Input() index!: number;
+
 
   typeControl = new FormControl('', [Validators.required]);
   valueControl = new FormControl('', [Validators.required]);
@@ -46,6 +50,7 @@ export class ContactComponent {
 
     this.valueControl.events.subscribe((event) => {
       this.contact.value = event.source.value as string;
+
     });
     
   }

@@ -1,3 +1,4 @@
+
 import { Contact } from "./contact";
 
 export interface Costumer {
@@ -5,4 +6,5 @@ export interface Costumer {
     name?: string;
     createdAt?: string; //date?
     contact?: Contact[];
+
   }

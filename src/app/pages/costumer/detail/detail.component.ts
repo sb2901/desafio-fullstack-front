@@ -9,8 +9,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { CostumerService } from '../../../services/costumer/costumer-service.service';
+
 import { Costumer } from '../../../interfaces/costumer';
 import { Contact } from '../../../interfaces/contact';
+
 
 @Component({
   selector: 'app-detail',
@@ -28,8 +30,9 @@ export class DetailComponent {
 
   costumerService = inject(CostumerService);
 
+
   public costumer :Costumer= {id:0};
-  
+
   public costumerForm: any; 
 
   private costumerId:number=0;
@@ -117,7 +120,9 @@ updateAction(){
   */
   onDelete() {
     if(!this.isNewRecord()){
+
       this.costumerService.delete({id:this.costumerId} as Costumer)
+
       .subscribe(
         {
             next: () => {
