@@ -33,6 +33,7 @@ export class DetailComponent {
   public costumerForm: any; 
 
   private costumerId:number=0;
+  
 
   constructor(){ }
 
@@ -51,15 +52,29 @@ export class DetailComponent {
    * Salva o registro
    */
   onSubmit(){
-    if(this.costumerForm.valid){
+    if(this.costumerForm.valid && this.isValidateContacts()){
       console.log(this.costumerForm.value);
+      //validar os filhos
+
 
       if(this.isNewRecord()){
         this.saveAction();
       }else {
         this.updateAction();
       }
+    }else{
+      alert('Campos obrigatórios não preenchidos');
     }
+ }
+
+ isValidateContacts(){
+  let valid:Boolean = true;
+  this.costumer.contact?.forEach(
+    contact => {
+      valid = valid && contact?.type >0 && contact?.value.length >0;
+    }
+  );
+  return valid;
  }
 
  saveAction(){
