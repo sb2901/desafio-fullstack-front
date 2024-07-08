@@ -45,13 +45,28 @@ export class ContactComponent {
   constructor(){ }
 
   ngOnInit() {
-    console.log(this.contact);
+
     this.contactForm.patchValue(this.contact as any);
 
     this.valueControl.events.subscribe((event) => {
       this.contact.value = event.source.value as string;
 
     });
+
+    /**
+     * Validação conforme o tipo de campo
+     */
+    this.typeControl.valueChanges.subscribe( (value) => {
+   
+      this.valueControl.setValue("");
+      let code = value;
+      if(code as unknown  === 1){
+        this.valueControl.setValidators([Validators.required, Validators.email]);
+      }else {
+        this.valueControl.setValidators([Validators.required, Validators.pattern("^[0-9]*$")]);
+      } 
+     
+   });
     
   }
 
