@@ -4,11 +4,18 @@
         <h1>Cadastro de clientes</h1>
     </div>
     
-     <button 
-        routerLink="/costumer/detail/0"
-        mat-fab aria-label="Adicionar novo cliente" class="top-right">
-        <mat-icon>add</mat-icon>
+    <div class="top-right">
+      <button 
+          routerLink="/costumer/detail/0"
+          mat-fab aria-label="Adicionar novo cliente" >
+          <mat-icon>add</mat-icon>
+        </button>
+        <button 
+        (click)="generatePdf()"
+        mat-fab aria-label="Adicionar novo cliente" >
+        <mat-icon>summarize</mat-icon>
       </button>
+    </div>
 
       <table mat-table [dataSource]="costumerList" class="mat-elevation-z8">
   
