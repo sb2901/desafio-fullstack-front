@@ -12,6 +12,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+import { Costumer } from '../../../../interfaces/costumer';
+import { Contact } from '../../../../interfaces/contact';
+
+
 
 @Component({
   selector: 'contact-detail',
@@ -25,8 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 export class ContactComponent {
 
 
-  @Input() costumer!:any;
-  @Input() contact!: any;
+  @Input() costumer!:Costumer;
+  @Input() contact!: Contact;
   @Input() index!: number;
 
 
@@ -42,10 +46,11 @@ export class ContactComponent {
 
   ngOnInit() {
     console.log(this.contact);
-    this.contactForm.patchValue(this.contact);
+    this.contactForm.patchValue(this.contact as any);
 
     this.valueControl.events.subscribe((event) => {
-      this.contact.value = event.source.value;
+      this.contact.value = event.source.value as string;
+
     });
     
   }
@@ -54,7 +59,7 @@ export class ContactComponent {
    * 
    */
   onDelete(){
-    this.costumer.contact.splice(this.index, 1); // Removes one item, at index 3
+    this.costumer.contact?.splice(this.index, 1); // Removes one item, at index 3
   }
   
 

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { Costumer } from '../../interfaces/costumer';
+
 
 
 @Injectable({
@@ -36,13 +38,10 @@ export class CostumerService {
   }
 
   //TODO ajustar por param
-  delete(data: any) {
+  delete(data: Costumer) {
     return this.httpClient.delete(`${this.baseUrl}`, 
       { headers: this.httpOptions.headers,
         body: data });
-      
-    
   }
-
 
 }
