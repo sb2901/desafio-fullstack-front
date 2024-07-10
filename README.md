@@ -1,22 +1,13 @@
-# Desafio Join
+# Desafio fullstack - Front
 
-Este projeto faz parte do Desafio proposto pela empresa Join.
-O backend deste projeto poder ser obtido  [aqui](https://github.com/sb2901/join-desafio-backend)
+Este projeto faz parte do Desafio fullstack. Ele corresponde ao frontend do sistema.
 
+Confira a descrição completa do desafio  [aqui](https://github.com/SeniorSA/inovacao/blob/main/desafio-fullstack.md)
 
-## Desafio
-Desenvolver dois CRUDs: Categoria e Produto. Eles deverão seguir os requisitos negociais e técnicos abaixo:
-- Uma categoria poderá possuir N produtos;
-- As colunas de cada tabela podem ser definidas por você;
-- O banco de dados utilizado deverá ser MySQL ou PostgreSQL;
-- O back-end do projeto deverá ser desenvolvido em Java com Spring Boot;
-- O front-end deverá ser desenvolvido em Angular;
-- Não é obrigatório criar mecanismo de autenticação, mas sua implementação contará pontos a seu favor.
-
-
+O backend deste projeto poder ser obtido  [aqui](https://github.com/sb2901/desafio-fullstack-back)
 
 ## Tecnologias Utilizadas
-Este projeto foi desenvolvido utilizando Angular 18 .
+Este projeto foi desenvolvido utilizando Angular 18 com Material.
 
 ## Instalação e execução
 Siga os passos abaixo para executar o projeto em sua máquina.
@@ -36,7 +27,8 @@ Siga os passos abaixo para executar o projeto em sua máquina.
 
 ## Próximos passos
 O desafio não foi finalizado e ficaram pendentes as seguintes implementações:
+- Validação do campos (exemplo: campo de email, máscara para telefone, etc)
+- Implementação de tratamentos de erros (imprimem em console mas não apresenta mensagem clara ao cliente)
 - Implementação de CSS corretamente. Realizada implementação básica para uso do sistema porém não está amigável.
-- Inicie a implementação do Material porém ocorreram incompatibilidades de tecnologias não havendo tempo hábil para ajuste. Desta forma é possível encontrar alguns recursos de Material no código fonte. 
-
+- Cobertura de testes
 
